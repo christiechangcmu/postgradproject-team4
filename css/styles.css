@@ -1,0 +1,462 @@
+*{
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+   height: 100%;
+}
+
+
+.wrapper {
+    display: flex;
+}
+
+#content {
+   /* width: calc(100% - 250px);*/
+    width: calc(100% - 250px);
+    padding: 40px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#content.active {
+    width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.subNav a {
+  font-size: 10px;
+}
+
+footer {
+}
+
+footer a {
+ color: #4774CE;
+}
+
+footer a:hover {
+ text-decoration: none;
+ font-weight: 500;
+}
+
+#copyright {
+  font-size: 0.75em;
+}
+
+hr {
+  height: 2px;
+  background: #F4F4F4;
+}
+/*Start of Navigation Bar CSS*/
+
+
+.navbar-btn {
+  position: fixed;
+  top: 20px;
+  z-index: 999;
+}
+#sidebarCollapse {
+  background-color: #91ACE2;
+  border-color: #91ACE2;
+}
+#sidebar {
+    width: 250px;
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100vh;
+    background: #F4F4F4; /*#B5C7EB*/
+    color: #4A4A4A;
+    transition: all 0.5s;
+    box-shadow: 2px 2px 15px #D4D4D4;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 8%;
+    /*background: #FFF; /*#B5C7EB*/
+}
+.sidebar-header h5 {
+    font-size: 1.25em;
+    font-weight: 700;
+}
+.sub-menu li a {
+  font-size: 0.75em!important;
+  color: #4A4A4A;
+}
+
+#sidebar ul.components {
+    padding: 8% 0;
+    /*background: #FFF; /*#B5C7EB*/
+}
+
+#sidebar ul.components>li {
+  padding-bottom: 10%;
+  color: black;
+}
+
+#sidebar ul.components>li>a {
+  font-weight: 600;
+}
+
+
+#sidebar ul li a {
+  /*main headers*/
+    padding: 1% 7% 1%;
+    font-size: 0.9em;
+    display: block;
+    color: black;
+}
+#sidebar ul li a:hover {
+    color: #4774CE;
+    background: #DAE3F5;
+    text-decoration: none;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #4A4A4A;
+    /*background: #FFF; /*#B5C7EB*/
+}
+
+
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+a[aria-expanded="false"]::before, a[aria-expanded="true"]::before {
+    content: ''; /*\e259*/
+    display: block;
+    position: absolute;
+    right: 8%;
+    /*font-family: 'Glyphicons Halflings';*/
+    font-size: 0.6em;
+}
+
+a[aria-expanded="true"]::before {
+    /*content: '\e260';*/
+}
+
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 12% !important;
+    /*background: #FFF; /*#B5C7EB*/
+}
+
+a.download {
+    background: #fff;
+    color: #4774CE;
+}
+
+a.article, a.article:hover {
+    background: #4774CE !important;
+    color: #fff !important;
+}
+
+/*End of Navigation Bar CSS*/
+
+
+#logo {
+  width: 150px!important;
+  padding: 20px 0px;
+}
+
+#home {
+  margin-top: 150px;
+  text-align: center;
+  margin-bottom: 300px;
+}
+
+#home h1{font-weight: 700;}
+
+.textholder {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    padding-left: 0px;}
+
+#overview {margin-bottom:150px;}
+
+h1 {
+  color: #5F5F5F;
+}
+h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #5F5F5F;
+}
+
+h3 {
+    color: #ACACAC;
+    margin-bottom: 10px;
+}
+
+.media-body {
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 12px;
+}
+.media h5 {
+    font-size: 16px;
+    font-weight: 600;
+}
+.mr-3 {
+    width: 100px;
+    margin: 20px;
+}
+
+
+/*Start of Table Design*/
+table, th, td {
+	border: 1px solid #CBCBCB;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+td img {
+	width:85px;
+	padding: 5px;
+}
+/*End of Table Design*/
+
+/*start of modal design*/
+.modal-body h5{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.modal-title {
+    font-weight: 700;
+    font-size: 30px;
+}
+.modal-body p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #8E8E8E;
+}
+
+.newmedia button {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.newmedia {
+  display: inline-block;
+}
+.img-link:hover {
+  box-shadow: 2px 2px 20px #F0A78A;
+  cursor:pointer;
+}
+
+.img-link {
+  width: 100px;
+  border-radius: 100px;
+  box-shadow: 2px 2px 15px #D4D4D4;
+}
+
+/*end of modal design*/
+
+
+/*start of card design*/
+.card-footer {
+  background: white!important;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.img-container {
+  text-align: center;
+}
+.card-button {
+  color: #4774CE;
+  font-weight: 500;
+}
+
+.card-button:hover {
+ text-decoration: none;
+ font-weight: 600;
+ color: #4774CE;
+}
+/*end of card design*/
+
+/*** START OF MEDIA QUERIES ***/
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+        font-size: 12px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #content {
+        width: 100%;
+    }
+    #content.active {
+        width: calc(100% - 250px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+    h1 {
+      font-size: 35px;
+    }
+    h2 {
+      font-size: 35px;
+      margin: 50px 0px 5px;
+    }
+    h3 {
+      font-size: 20px;
+      margin: 20px 0px 5px;
+    }
+    .section-caption {
+      font-size: 14px;
+      width: 100%;
+      padding: 10px 0px 25px;
+    }
+    .web-maincontent {
+      padding: 0px 10px;
+    }
+    #students-chart {
+      margin: 35px 0px;
+      width: 100%;
+    }
+    .card-img-top {
+      width: 150px;
+      margin: auto;
+    }
+    .card-body {
+      margin: 3px;
+    }
+    .card {
+      height: 400px;
+      margin: auto;
+    }
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 769px) and (max-width: 991px) {
+    #sidebar {
+      font-size: 14px;
+    }
+    h1 {
+      font-size: 45px;
+    }
+    h2 {
+      font-size: 45px;
+      margin: 75px 0px 10px;
+    }
+    h3 {
+      font-size: 24px;
+      margin: 40px 0px 5px;
+    }
+    .section-caption {
+      font-size: 14px;
+      max-width: 500px;
+      padding: 15px 0px 45px;
+    }
+    .web-maincontent {
+      padding: 0px 30px;
+    }
+    #students-chart {
+      margin: 50px 0px;
+      width: 100%;
+    }
+    .card-img-top {
+      max-width: 150px;
+      margin: auto;
+    }
+    .card-body {
+      margin: 5px;
+    }
+    .card {
+      height: 450px;
+      margin: auto;
+    }
+    .card p {
+      font-size: 14px;
+    }
+    .card h4 {
+      font-size: 20px;
+    }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+    #sidebar {
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 50px;
+    }
+    h2 {
+      font-size: 50px;
+      margin: 100px 0px 10px;
+    }
+    h3 {
+      font-size: 26px;
+      margin: 75px 0px 5px;
+    }
+    #students-chart {
+      margin: 75px 0px;
+      width: 700px;
+    }
+    .section-caption {
+      font-size: 16px;
+      width: 700px;
+      padding: 15px 0px 45px;
+    }
+    .web-maincontent {
+      padding: 0px 75px;
+    }
+    .card-img-top {
+      width: 80%;
+    }
+    .card-body {
+      margin: 10px;
+    }
+    .card {
+      height: 550px;
+      margin: auto;
+    }
+}
+/*** END OF MEDIA QUERIES ***/
+
+
+/*** START OF ALUMNI TABLE ***/
+#destinations {
+  padding-left: 40px;
+}
+#destinations h2 {
+  padding-bottom: 30px!important;
+}
+#titleInput, #stateSorter, #citySorter {
+  padding: 10px;
+}
+#table-inputs {
+  padding-bottom: 15px!important;
+}
+#table-inputs input {
+  width: 300px;
+}
+#directory-table th {
+  font-weight:700;
+  background: #F4F4F4;
+}
+#table-wrapper {
+  padding-bottom: 100px;
+}
+/*** END OF ALUMNI TABLE ***/

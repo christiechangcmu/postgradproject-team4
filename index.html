@@ -1,0 +1,972 @@
+<!doctype html>
+
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Scrollbar Custom CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+
+	<!-- HighCharts Scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://code.highcharts.com/maps/highmaps.js"></script>-->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<title>IS Post-Graduation Stats</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<nav id="sidebar">
+			<!-- Sidebar Header -->
+			<div class="sidebar-header">
+				<h5>Information Systems<br>Post-Graduation Statistics</h5>
+			</div>
+
+			<!-- Sidebar Links -->
+			<ul class="list-unstyled components">
+				<li><a class="main-header active" href="#">Home</a></li>
+				<li><!-- Link with dropdown items -->
+					<a href="#overview" aria-expanded="true"  class="main-header">Overview</a>
+					<ul class="sub-menu">
+						<li><a href="#employment-sources">Employment Sources</a></li>
+					</ul>
+				</li>
+				<li><!-- Link with dropdown items -->
+					<a href="#employment-info" aria-expanded="true"  class="main-header">Employment Info</a>
+					<ul class="sub-menu">
+						<li><a href="#salary-stats">Salary Stats</a></li>
+						<li><a href="#top-5-employ">Top Employers</a></li>
+						<li><a href="#top-5-position">Top Job Positions</a></li>
+						<li><a href="#map">Student Distribution Map</a></li>
+					</ul>
+				</li>
+				<li><!-- Link with dropdown items -->
+					<a href="#continuing-ed" aria-expanded="true" class="main-header">Continuing Education</a>
+					<ul class="sub-menu">
+						<li><a href="#top-schools">Top Schools</a></li>
+						<li><a href="#top-studies">Popular Fields of Study</a></li>
+					</ul>
+				</li>
+				<li><a href="table.html" target="_blank" class="main-header">Alumni Employment & Contact Info</a></li>
+			</ul>
+		</nav>
+
+		<main id="content">
+
+			<button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+				<i class="glyphicon glyphicon-align-left"></i>
+				<span></span>
+			</button>
+
+
+			<section id="home">
+				<h1>CMU Information Systems<br>Post Graduation Statistics</h1>
+				<img id="logo" src="images/navlogo.png">
+				<p>Learn more about statistics regarding post-graduates of the Information Systems program.</p>
+			</section>
+
+		<div class="web-maincontent">
+			<section id="overview">
+				<h2>Overview</h2>
+
+				<p class="section-caption">A majority of Information Systems students are employed after graduating from CMU. Some chose to continue education in a graduate program or are still exploring their employment options.</p>
+
+				<div id="students-chart"></div>
+
+				<section id="employment-sources">
+					<div class="textholder">
+						<h3>Employment Sources</h3>
+						<p class="section-caption">Our students get their job offers from these ways:</p>
+					</div>
+
+					<!-- handshake card -->
+					<div class="card-group row">
+						<div class="col-sm-12 col-lg-3 col-md-6">
+						<div class="card">
+
+						  <div class="card-body">
+								<div class="img-container">
+								<img class="card-img-top" src="images/hs_logo.png" alt="handshake">
+								</div>
+						    <h4 class="card-title">Handshake</h4>
+						    <p class="card-text">26% of post-graduate Information Systems students of Class of 2016 landed their full-time jobs by using Carnegie Mellon's career platform. Carnegie Mellon nows uses Handshake as the career platform (Previously called TartanTRAK).
+						    </p>
+						  </div>
+							<div class="card-footer">
+								<a href="https://cmu.joinhandshake.com/" target="_blank" class="card-button">Go to Handshake</a>
+							</div>
+						</div>
+					</div>
+
+				<!-- networking card -->
+					<div class="col-sm-12 col-lg-3 col-md-6">
+						<div class="card">
+
+						  <div class="card-body">
+								<div class="img-container">
+								<img class="card-img-top" src="images/networking.png" alt="networking">
+								</div>
+						    <h4 class="card-title">Networking</h4>
+						    <p class="card-text">19% of post-graduate Information Systems students of Class of 2016 received their full-time employment by the network they built. Students can connect and network with Alumni of the Information Systems Program by clicking the link provided below.
+						    </p>
+						  </div>
+							<div class="card-footer">
+								<a href="table.html" target="_blank" class="card-button">See Alumni Contact</a>
+							</div>
+						</div>
+					</div>
+
+				<!-- internship card -->
+					<div class="col-sm-12 col-lg-3 col-md-6">
+						<div class="card">
+
+						  <div class="card-body">
+								<div class="img-container">
+								<img class="card-img-top" src="images/internship.png" alt="networking">
+								</div>
+						    <h4 class="card-title">Hired from Internship</h4>
+						    <p class="card-text">32% of post-graduate Information Systems students of Class of 2016 received full-time return offers from their internships from the summer before.
+						    </p>
+						  </div>
+							<div class="card-footer">
+								<a href="https://www.cmu.edu/career/documents/2016_one_pagers/internships/DC.%20Information%20Systems.%20Internship%20One-Pager%20Final.pdf" class="card-button">View Intern Info</a>
+							</div>
+						</div>
+					</div>
+				<!-- Job Fairs card -->
+					<div class="col-sm-12 col-lg-3 col-md-6">
+						<div class="card">
+
+						  <div class="card-body">
+								<div class="img-container">
+								<img class="card-img-top" src="images/jobfair.png" alt="networking">
+								</div>
+						    <h4 class="card-title">Job Fairs</h4>
+						    <p class="card-text">16% of post-graduate Information Systems students of Class of 2016 got their full-time offers by attending one of Carnegie Mellon's job fairs. Carnegie Mellon hosts several job fairs throughout the academic year, including the Technical Opportunities Conference, Encompass, and Jumpstart.
+						    </p>
+						  </div>
+							<div class="card-footer">
+								<a href="https://www.cmu.edu/career/employers/attend_a_career_event.html" class="card-button">Check CMU Job Fairs</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</section>
+			</section>
+			</section>
+
+			<section id="employment-info">
+				<h2>Employment Information</h2>
+
+				<section id="salary-stats">
+					<h3>Salary Stats</h3>
+					<div id="salary-container"></div>
+
+				</section>
+
+				<section id="top-5-employ">
+					<h3>Top 5 Employers</h3>
+					<p class="section-caption">Here are the top companies that Information Systems students of Class of 2016 are employed.</p>
+
+					<div class="circles-wrapper">
+				        <div class="newmedia">
+				            <a data-toggle="modal" data-target="#DelloitteModal" data-whatever="@mdo"><img class="mr-3 img-link" src="images/deloitte2.png" alt="Generic placeholder image"></a>
+				        </div>
+
+				            <!-- start of modal card -->
+			            <div class="modal fade" id="DelloitteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			                <div class="modal-dialog" role="document">
+			                    <div class="modal-content">
+			                        <div class="modal-header">
+			                            <h5 class="modal-title" id="exampleModalLabel">Deloitte</h5>
+			                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                                <span aria-hidden="true">&times;</span>
+			                            </button>
+			                        </div>
+			                        <div class="modal-body">
+			                            <div class="row">
+			                                <div class="col-7">
+			                                    <h5>Description</h5>
+			                                    <p>Deloitte is a UK-incorporated multinational professional services firm with operational headquarters in New York City in the United States.</p>
+			                                </div>
+			                                <div class="col-3">
+			                                    <img class="mr-3" src="images/deloitte.png" alt="Generic placeholder image">
+			                                </div>
+			                            </div>
+			                            <hr>
+			                            <h5>Size</h5>
+			                            <p>25,000+ employees</p>
+			                            <hr>
+			                            <h5>Industry</h5>
+			                            <p>Accounting</p>
+			                            <hr>
+			                            <h5>Top Positions</h5>
+			                            <p>Business Technology Analyst</p>
+			                        </div>
+			                        <div class="modal-footer">
+			                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			                            <button type="button" class="btn btn-primary"> <a target="_blank" href="http://www.deloitte.com"> Visit Website </a> </button>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+
+				<!-- Accenture -->
+				        <div class="newmedia">
+				            <a data-toggle="modal" data-target="#AccentureModal" data-whatever="@mdo"><img class="mr-3 img-link" src="images/accenture.png" alt="Generic placeholder image"></a>
+				        </div>
+
+				            <!-- start of modal card -->
+				            <div class="modal fade" id="AccentureModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				                <div class="modal-dialog" role="document">
+				                    <div class="modal-content">
+				                        <div class="modal-header">
+				                            <h5 class="modal-title" id="exampleModalLabel">Accenture</h5>
+				                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				                                <span aria-hidden="true">&times;</span>
+				                            </button>
+				                        </div>
+				                        <div class="modal-body">
+				                            <div class="row">
+				                                <div class="col-7">
+				                                    <h5>Description</h5>
+				                                    <p>Accenture PLC is a global management consulting and professional services company that provides a strategy, consulting, digital, technology and operations services.</p>
+				                                </div>
+				                                <div class="col-3">
+				                                    <img class="mr-3" src="images/accenture.png" alt="Generic placeholder image">
+				                                </div>
+				                            </div>
+				                            <hr>
+				                            <h5>Size</h5>
+				                            <p>25,000+ employees</p>
+				                            <hr>
+				                            <h5>Industry</h5>
+				                            <p>Management consulting</p>
+				                            <hr>
+				                            <h5>Top Positions</h5>
+				                            <p>Emerging Technology Innovation Analyst<br>Software Development Consultant
+				                                <br> Consulting Analyst</p>
+				                        </div>
+				                        <div class="modal-footer">
+				                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				                            <button type="button" class="btn btn-primary"> <a target="_blank" href="http://www.accenture.com"> Visit Website </a> </button>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				            <!-- end of modal card -->
+
+				<!-- Apple -->
+				        <div class="newmedia">
+				            <a data-toggle="modal" data-target="#AppleModal" data-whatever="@mdo"><img class="mr-3 img-link" src="images/apple.png" alt="Generic placeholder image"></a>
+				        </div>
+
+				            <!-- start of modal card -->
+				            <div class="modal fade" id="AppleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				                <div class="modal-dialog" role="document">
+				                    <div class="modal-content">
+				                        <div class="modal-header">
+				                            <h5 class="modal-title" id="exampleModalLabel">Apple</h5>
+				                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				                                <span aria-hidden="true">&times;</span>
+				                            </button>
+				                        </div>
+				                        <div class="modal-body">
+				                            <div class="row">
+				                                <div class="col-7">
+				                                    <h5>Description</h5>
+				                                    <p>Apple Inc. is an American multinational technology company headquartered in Cupertino, California that designs, develops, and sells consumer electronics, computer software, and online services.
+				                                    </p>
+				                                </div>
+				                                <div class="col-3">
+				                                    <img class="mr-3" src="images/apple.png" alt="Generic placeholder image">
+				                                </div>
+				                            </div>
+				                            <hr>
+				                            <h5>Size</h5>
+				                            <p>25,000+ employees</p>
+				                            <hr>
+				                            <h5>Industry</h5>
+				                            <p>Electronic &amp; Computer Hardware</p>
+				                            <hr>
+				                            <h5>Top Positions</h5>
+				                            <p>Software Engineer <br>Product Management</p>
+				                        </div>
+				                        <div class="modal-footer">
+				                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				                            <button type="button" class="btn btn-primary"> <a target="_blank" href="http://www.apple.com"> Visit Website </a> </button>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				            <!-- end of modal card -->
+
+				<!-- Capital One -->
+				        <div class="newmedia">
+				            <a data-toggle="modal" data-target="#CapitalOneModal" data-whatever="@mdo"><img class="mr-3 img-link" src="images/capitalone.png" alt="Generic placeholder image"></a>
+				        </div>
+
+				            <!-- start of modal card -->
+				            <div class="modal fade" id="CapitalOneModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				                <div class="modal-dialog" role="document">
+				                    <div class="modal-content">
+				                        <div class="modal-header">
+				                            <h5 class="modal-title" id="exampleModalLabel">Capital One</h5>
+				                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				                                <span aria-hidden="true">&times;</span>
+				                            </button>
+				                        </div>
+				                        <div class="modal-body">
+				                            <div class="row">
+				                                <div class="col-7">
+				                                    <h5>Description</h5>
+				                                    <p>Capital One Financial Corporation is a bank holding companyspecializing in credit cards, auto loans, banking and savingsproducts headquartered in McLean, Virginia.</p>
+				                                </div>
+				                                <div class="col-3">
+				                                    <img class="mr-3" src="images/capitalone.png" alt="Generic placeholder image">
+				                                </div>
+				                            </div>
+				                            <hr>
+				                            <h5>Size</h5>
+				                            <p>25,000+ employees</p>
+				                            <hr>
+				                            <h5>Industry</h5>
+				                            <p>Commercial Banking &amp; Credit</p>
+				                            <hr>
+				                            <h5>Top Positions</h5>
+				                            <p>
+				                                Designer <br>
+				                                Software Engineer <br>
+				                                Technology Development Program Associate<br>
+				                            </p>
+				                        </div>
+				                        <div class="modal-footer">
+				                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				                            <button type="button" class="btn btn-primary"> <a target="_blank" href="https://campus.capitalone.com/"> Visit Website </a> </button>
+				                        </div>
+				                    </div>
+				                </div>
+				            </div>
+				            <!-- end of modal card -->
+
+				<!-- Deutsche -->
+				        <div class="newmedia">
+				            <a data-toggle="modal" data-target="#DeutscheModal" data-whatever="@mdo"><img class="mr-3 img-link" src="images/deutsche.png" alt="Generic placeholder image"></a>
+				        </div>
+
+
+				            <!-- start of modal card -->
+		            <div class="modal fade" id="DeutscheModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		                <div class="modal-dialog" role="document">
+		                    <div class="modal-content">
+		                        <div class="modal-header">
+		                            <h5 class="modal-title" id="exampleModalLabel">Deutsche Bank</h5>
+		                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                                <span aria-hidden="true">&times;</span>
+		                            </button>
+		                        </div>
+		                        <div class="modal-body">
+		                            <div class="row">
+		                                <div class="col-7">
+		                                    <h5>Description</h5>
+		                                    <p>Deutsche Bank AG is a German global banking and financial services company, with its headquarters in the Deutsche Bank Twin Towers in Frankfurt.
+		                                    </p>
+		                                </div>
+		                                <div class="col-3">
+		                                    <img class="mr-3" src="images/deutsche.png" alt="Generic placeholder image">
+		                                </div>
+		                            </div>
+		                            <hr>
+		                            <h5>Size</h5>
+		                            <p>10,000 - 25,000 employees</p>
+		                            <hr>
+		                            <h5>Industry</h5>
+		                            <p>Investment Banking</p>
+		                            <hr>
+		                            <h5>Top Positions</h5>
+		                            <p>Analyst</p>
+		                        </div>
+		                        <div class="modal-footer">
+		                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		                            <button type="button" class="btn btn-primary"> <a target="_blank" href="http:///db.com/careers"> Visit Website </a> </button>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+						</div>
+				</section>
+				<section id="top-5-position">
+					<h3>Top 5 Job Positions</h3>
+					<p class="section-caption">
+						Here are the top job positions that Information Systems students of Class of 2016 pursued.
+					</p>
+					<div id="cloud-container"></div>
+					<table id="directory-table" style="display: none;">
+						<tr>
+							<th>Employer</th>
+							<th>Job Title</th>
+							<th>City</th>
+							<th>State/Country</th>
+						</tr>
+						<tr>
+							<td><img src="images/companies/accenture.png"></td>
+							<td>Emerging Technology Innovation Analyst</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/accenture.png"></td>
+							<td>Software Development Consultant</td>
+							<td>Washington</td>
+							<td>DC</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/accenture.png"></td>
+							<td>Consulting Analyst - Accenture Digital</td>
+							<td>Boston</td>
+							<td>MA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/adobe.png" </td>
+							<td>Associate Web Consultant</td>
+							<td>McLean</td>
+							<td>VA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/amazon.png"></td>
+							<td>Software Development Engineer</td>
+							<td>Seattle</td>
+							<td>WA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/apple.png"></td>
+							<td>Unknown Job Title</td>
+							<td>Cupertino</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+						<td><img src="images/companies/apple.png"></td>
+							<td>Product Management</td>
+							<td>Cupertino</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/apple.png"></td>
+							<td>UX Designer</td>
+							<td>Cupertino</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/apple.png"></td>
+							<td>Product Management</td>
+							<td>Cupertino</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/apt.png"></td>
+							<td>UX Designer</td>
+							<td>Arlington</td>
+							<td>VA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/att.png"></td>
+							<td>Associate Applications Developer, Emerging
+							Technologies Program</td>
+							<td>Middletown</td>
+							<td>NJ</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/bloomberg.png"></td>
+							<td>Market Data Analyst</td>
+							<td>Hong Kong</td>
+							<td>China</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/bloomboard.png"></td>
+							<td>Software Engineer</td>
+							<td>Palo Alto</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/bny.png"></td>
+							<td>LDP Associate</td>
+							<td>Pittsburgh</td>
+							<td>PA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/capitalone.png"></td>
+							<td>Software Developer</td>
+							<td>McLean</td>
+							<td>VA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/capitalone.png"></td>
+							<td>Designer</td>
+							<td>San Francisco</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/capitalone.png"></td>
+							<td>Technology Development Program Associate</td>
+							<td>McLean</td>
+							<td>VA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/ch2m.png"></td>
+							<td>Environmental, Health, & Safety Information</td>
+							<td>Chicago</td>
+							<td>IL</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/citi.png"></td>
+							<td>Information Security Analyst</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/coupa.png"></td>
+							<td>Software Engineer</td>
+							<td>San Francisco</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/deloitte.png"></td>
+							<td>Business Technology Analyst</td>
+							<td>Chicago</td>
+							<td>IL</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/deloitte.png"></td>
+							<td>Business Technology Analyst</td>
+							<td>Pittsburgh</td>
+							<td>PA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/deloitte.png"></td>
+							<td>Business Technology Analyst</td>
+							<td>Rosslyn</td>
+							<td>VA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/deloitte.png"></td>
+							<td>Business Technology Analyst</td>
+							<td>Chicago</td>
+							<td>IL</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/deloitte.png"></td>
+							<td>Business Technology Analyst</td>
+							<td>Washington</td>
+							<td>DC</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/deloitte.png"></td>
+							<td>Business Technology Analyst</td>
+							<td>Chicago</td>
+							<td>IL</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/deutsche.png"></td>
+							<td>GTO Analyst</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/deutsche.png"></td>
+							<td>Analyst</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/enova.png"></td>
+							<td>Senior Software Engineer II</td>
+							<td>Chicago</td>
+							<td>IL</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/epicsystems.png"></td>
+							<td>Software Engineer</td>
+							<td>Madison</td>
+							<td>WI</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/epicsystems.png"></td>
+							<td>Integration Engineer</td>
+							<td>Madison</td>
+							<td>WI</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/espn.png"></td>
+							<td>Web Developer</td>
+							<td>Hartford</td>
+							<td>CT</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/facebook.png"></td>
+							<td>Software Engineer</td>
+							<td>Menlo Park</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/freddiemac.png"></td>
+							<td>Business Systems Analyst</td>
+							<td>Washington</td>
+							<td>DC</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/generalelectrics.png"></td>
+							<td>Software Development Leadership Program</td>
+							<td>San Ramon</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/gianteagle.png"></td>
+							<td>Business Analyst</td>
+							<td>Pittsburgh</td>
+							<td>PA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/godaddy.png"></td>
+							<td>Software Engineer</td>
+							<td>San Francisco</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/goldmansachs.png"></td>
+							<td>Software Engineer in Technology</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/harrys.png"></td>
+							<td>Untitled Position</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/hopskotch.png"></td>
+							<td>Co-Founder</td>
+							<td></td>
+							<td>CA</td>
+						</tr>
+
+						<tr>
+							<td><img src="images/companies/jpmorgan.png"></td>
+							<td>Business Systems Analyst</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/jobcase.png"></td>
+							<td>Software Engineer</td>
+							<td>Cambridge</td>
+							<td>MA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/johnson.png"></td>
+							<td>IT Leadership Development Program Analyst</td>
+							<td>New Bruswick</td>
+							<td>NJ</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/liferay.png"></td>
+							<td>Junior Consultant</td>
+							<td>Chicago</td>
+							<td>IL</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/linkedin.png"></td>
+							<td>Associate Web Developer/UI Engineer</td>
+							<td>San Francisco</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/matrixgroup.png"></td>
+							<td>Web Developer</td>
+							<td>Arlington</td>
+							<td>VA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/mckinsey.png"></td>
+							<td>Digital Analyst</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/moment.png"></td>
+							<td>Designer</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/pwc.png"></td>
+							<td>Advisory Associate</td>
+							<td>Los Altos</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/pwc.png"></td>
+							<td>Consultant - Advisory - Cybersecurity</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/salesforce.png"></td>
+							<td>Software Engineer</td>
+							<td>San Francisco</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/salesforce.png"></td>
+							<td>Associate Member of Technical Staff</td>
+							<td>San Francisco</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/sapientnitro.png"></td>
+							<td>Project Manager</td>
+							<td>New York</td>
+							<td>NY</td>
+						</tr>
+						<tr>
+							<td>TRNGLE</td>
+							<td>TBD</td>
+							<td>TBD</td>
+							<td>CA</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/workwave.png"></td>
+							<td>Software Engineer</td>
+							<td>Neptune</td>
+							<td>NJ</td>
+						</tr>
+						<tr>
+							<td><img src="images/companies/worldwide.png"></td>
+							<td>Engineer</td>
+							<td>Honolulu</td>
+							<td>HI</td>
+						</tr>
+					</table>
+
+				</section>
+
+				<section id="map">
+					<div class="textholder">
+						<h3>Student Distribution Map</h3>
+						<p class="section-caption">Postgraduates of Class of 2016 from the Information Systems program are spread out across the country, with even a few international!
+						</p>
+						<div id="map-container"></div>
+
+					</div>
+
+				</section>
+
+			</section>
+
+			<section id="continuing-ed">
+				<h2>Continuing Education</h2>
+					<p class="section-caption">Here are the programs and schools that students of Class of 2016 went to for further education.
+					</p>
+
+				<section id="top-schools">
+					<h3>Top Schools</h3>
+
+
+					<div class="circle-wrapper">
+
+						<div class="newmedia">
+		            <a data-toggle="modal" data-target="#CmuModal" data-whatever="@mdo"><img class="mr-3 img-link" src="images/cmu.png" alt="Generic placeholder image"></a>
+		        </div>
+
+				        <!-- start of modal card -->
+			            <div class="modal fade" id="CmuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			                <div class="modal-dialog" role="document">
+			                    <div class="modal-content">
+			                        <div class="modal-header">
+			                            <h5 class="modal-title" id="exampleModalLabel">Carnegie Mellon University</h5>
+			                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                                <span aria-hidden="true">&times;</span>
+			                            </button>
+			                        </div>
+			                        <div class="modal-body">
+			                            <div class="row">
+			                                <div class="col-7">
+			                                    <h5>Description</h5>
+			                                    <p>CMU is a global research university known for its world-class, interdisciplinary programs: arts, business, computing, engineering, humanities, policy and science.</p>
+			                                </div>
+			                                <div class="col-3">
+			                                    <img class="mr-3" src="images/cmu.png" alt="Generic placeholder image">
+			                                </div>
+			                            </div>
+			                            <hr>
+			                            <h5>Size</h5>
+			                            <p>12,000+ students</p>
+			                            <hr>
+			                            <h5>Top Major</h5>
+			                            <p>
+			                            	Human Computer Interaction (MS) <br>
+			                            	IS – Business Intelligence &amp; Data </p>
+			                        </div>
+			                        <div class="modal-footer">
+			                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			                            <button type="button" class="btn btn-primary"> <a target="_blank" href="https://www.cmu.edu/"> Visit Website </a> </button>
+			                        </div>
+			                    </div>
+			                </div>
+			            </div>
+
+		        <div class="newmedia ">
+		            <a data-toggle="modal" data-target="#BuModal" data-whatever="@mdo"><img class="mr-3 img-link" src="images/bu.png" alt="Generic placeholder image"></a>
+
+		            <!-- start of modal card -->
+	            <div class="modal fade" id="BuModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	                <div class="modal-dialog" role="document">
+	                    <div class="modal-content">
+	                        <div class="modal-header">
+	                            <h5 class="modal-title" id="exampleModalLabel">Boston University</h5>
+	                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                                <span aria-hidden="true">&times;</span>
+	                            </button>
+	                        </div>
+	                        <div class="modal-body">
+	                            <div class="row">
+	                                <div class="col-7">
+	                                    <h5>Description</h5>
+	                                    <p>Boston University (commonly referred to as BU) is a private research university located in Boston, Massachusetts. The university is nonsectarian, and is historically affiliated with the United Methodist Church.</p>
+	                                </div>
+	                                <div class="col-3">
+	                                    <img class="mr-3" src="images/bu.png" alt="Generic placeholder image">
+	                                </div>
+	                            </div>
+	                            <hr>
+	                            <h5>Size</h5>
+	                            <p>30,000+ students</p>
+	                            <hr>
+	                            <h5>Top Major</h5>
+	                            <p>Bioimaging (MS)</p>
+	                        </div>
+	                        <div class="modal-footer">
+	                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	                            <button type="button" class="btn btn-primary"> <a target="_blank" href="http://www.bu.edu/"> Visit Website </a> </button>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+
+	        </div>
+
+				</section>
+
+				<section id="top-studies">
+					<h3>Popular Fields of Study</h3>
+					<p class="section-caption">In 2016, five Information Systems students pursued a Master's degree in the following fields: Human-Computer Interaction (3), Business Intelligence &amp; Data (1), and Bioimaging (1)</p>
+
+					<div class="card-group row">
+						<div class="col-sm-12 col-lg-3 col-md-6">
+							<div class="card">
+							  <div class="card-body">
+									<div class="img-container">
+									<img class="card-img-top" src="images/cmu.png" alt="handshake">
+									</div>
+							    <h4 class="card-title">Human-Computer Interaction</h4>
+							  </div>
+								<div class="card-footer">
+									<a href="https://www.hcii.cmu.edu/academics/mhci" target="_blank" class="card-button">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12 col-lg-3 col-md-6">
+							<div class="card">
+							  <div class="card-body">
+									<div class="img-container">
+									<img class="card-img-top" src="images/cmu.png" alt="handshake">
+									</div>
+							    <h4 class="card-title">Business Intelligence &amp; Data</h4>
+							  </div>
+								<div class="card-footer">
+									<a href="https://www.heinz.cmu.edu/programs/information-systems-management-master/bida" target="_blank" class="card-button">Learn More</a>
+								</div>
+							</div>
+						</div>
+
+							<div class="col-sm-12 col-lg-3 col-md-6">
+								<div class="card">
+								  <div class="card-body">
+										<div class="img-container">
+										<img class="card-img-top" src="images/bu.png" alt="handshake">
+										</div>
+								    <h4 class="card-title">Bioimaging</h4>
+								  </div>
+									<div class="card-footer">
+										<a href="http://www.bumc.bu.edu/mbi/" target="_blank" class="card-button">Learn More</a>
+									</div>
+								</div>
+							</div>
+					</div>
+				</section>
+			</section>
+
+			<footer>
+				<br><br>
+				<hr>
+				<br><br>
+				<div class="row">
+					<div class="col-lg-3 col-sm-6">
+						<p>
+							Carnegie Mellon University <br>
+							5000 Forbes Avenue <br>
+							Pittsburgh, PA 15213 <br>
+							412-268-2000
+						</p>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+
+							<a href="https://www.cmu.edu/"  target="_blank"> CMU Site</a> <br>
+							<a href="https://www.cmu.edu/information-systems/"  target="_blank">CMU Information Systems</a>
+
+					</div>
+					<div class="col-lg-4 col-sm-6" style="margin-left: auto;">
+						<p>
+							This website is coded by Christie Chang, Angela Xie, and
+							 Warren Glasner as the final project of 67-240 Mobile
+							 Website Design &amp; Development.
+						</p>
+					</div>
+				</div>
+				<br><br>
+				<div class="row">
+					<p style="margin-left: auto;
+					margin-right: auto;" id="copyright">
+						Copyright &copy; 2017 Mobile Web Design Team 4
+					</p>
+				</div>
+			</footer>
+		</div>
+
+	</main>
+	</div>
+
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+	<!-- Bootstrap Js CDN -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Custom Scroller Js CDN -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<script src="js/scripts.js"></script>
+
+</body>
+
+</html>

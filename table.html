@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- Scrollbar Custom CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
+
+	<!-- HighCharts Scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!-- <script src="https://code.highcharts.com/maps/highmaps.js"></script>-->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="http://code.highcharts.com/maps/modules/map.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+
+
+	<title>Alumni Directory</title>
+</head>
+<body>
+	<section id="destinations">
+		<h2>Alumni Employment and Contact Information</h2>
+		<div id="table-inputs">
+			<input type="text" id="titleInput" onkeyup="searchJob()" placeholder="Search for Job Titles.." title="Type in a job title">
+			<button id="stateSorter">Sort by State</button>
+			<button id="citySorter">Sort by City</button>
+		</div>
+		<div id="table-wrapper">
+		<table id="directory-table">
+			<tr>
+				<th>Employer</th>
+				<th>Job Title</th>
+				<th>City</th>
+				<th>State/Country</th>
+				<th>Alumnus</th>
+				<th>Email</th>
+			</tr>
+			<tr>
+				<td><img src="images/companies/accenture.png"></td>
+				<td>Emerging Technology Innovation Analyst</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Floyd Jonson</td>
+				<td>floydjonson@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/accenture.png"></td>
+				<td>Software Development Consultant</td>
+				<td>Washington</td>
+				<td>DC</td>
+				<td>Krystal Swanson</td>
+				<td>kswan@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/accenture.png"></td>
+				<td>Consulting Analyst - Accenture Digital</td>
+				<td>Boston</td>
+				<td>MA</td>
+				<td>Jessica Carr</td>
+				<td>jessicarr@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/adobe.png" </td>
+				<td>Associate Web Consultant</td>
+				<td>McLean</td>
+				<td>VA</td>
+				<td>Hector Martin</td>
+				<td>ohhec@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/amazon.png"></td>
+				<td>Software Development Engineer</td>
+				<td>Seattle</td>
+				<td>WA</td>
+				<td>Sean Newby</td>
+				<td>seann@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/apple.png"></td>
+				<td>IS&amp;T Software Developer</td>
+				<td>Cupertino</td>
+				<td>CA</td>
+				<td>Anita Hayes</td>
+				<td>aha@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+			<td><img src="images/companies/apple.png"></td>
+				<td>Product Management</td>
+				<td>Cupertino</td>
+				<td>CA</td>
+				<td>Christina Adams</td>
+				<td>christia@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/apple.png"></td>
+				<td>UX Designer</td>
+				<td>Cupertino</td>
+				<td>CA</td>
+				<td>Erik Red</td>
+				<td>erikr@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/apple.png"></td>
+				<td>Product Management</td>
+				<td>Cupertino</td>
+				<td>CA</td>
+				<td>Zack Flores</td>
+				<td>zflores@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/apt.png"></td>
+				<td>UX Designer</td>
+				<td>Arlington</td>
+				<td>VA</td>
+				<td>Allison White</td>
+				<td>alliw@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/att.png"></td>
+				<td>Associate Applications Developer, Emerging
+				Technologies Program</td>
+				<td>Middletown</td>
+				<td>NJ</td>
+				<td>Mitch Wood</td>
+				<td>mitchw@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/bloomberg.png"></td>
+				<td>Market Data Analyst</td>
+				<td>Hong Kong</td>
+				<td>China</td>
+				<td>Oliver Egerton</td>
+				<td>oton@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/bloomboard.png"></td>
+				<td>Software Engineer</td>
+				<td>Palo Alto</td>
+				<td>CA</td>
+				<td>Rose Andrews</td>
+				<td>roseandrews@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/bny.png"></td>
+				<td>LDP Associate</td>
+				<td>Pittsburgh</td>
+				<td>PA</td>
+				<td>Sheryl Brown</td>
+				<td>Sherylbrown@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/capitalone.png"></td>
+				<td>Software Developer</td>
+				<td>McLean</td>
+				<td>VA</td>
+				<td>Suzzane Potter</td>
+				<td>spotter@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/capitalone.png"></td>
+				<td>Designer</td>
+				<td>San Francisco</td>
+				<td>CA</td>
+				<td>Zara Jenab</td>
+				<td>zmj@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/capitalone.png"></td>
+				<td>Technology Development Program Associate</td>
+				<td>McLean</td>
+				<td>VA</td>
+				<td>Frank Jones</td>
+				<td>frankj@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/ch2m.png"></td>
+				<td>Environmental, Health, & Safety Information</td>
+				<td>Chicago</td>
+				<td>IL</td>
+				<td>Matthew Mack</td>
+				<td>matmack@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/citi.png"></td>
+				<td>Information Security Analyst</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Mario Fieri</td>
+				<td>mfieri@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/coupa.png"></td>
+				<td>Software Engineer</td>
+				<td>San Francisco</td>
+				<td>CA</td>
+				<td>Marylin Young</td>
+				<td>maryoung@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/deloitte.png"></td>
+				<td>Business Technology Analyst</td>
+				<td>Chicago</td>
+				<td>IL</td>
+				<td>Gary Allen</td>
+				<td>garya@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/deloitte.png"></td>
+				<td>Business Technology Analyst</td>
+				<td>Pittsburgh</td>
+				<td>PA</td>
+				<td>Rachel Murphy</td>
+				<td>rachelm@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/deloitte.png"></td>
+				<td>Business Technology Analyst</td>
+				<td>Rosslyn</td>
+				<td>VA</td>
+				<td>Martha Foster</td>
+				<td>marthaf@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/deloitte.png"></td>
+				<td>Business Technology Analyst</td>
+				<td>Chicago</td>
+				<td>IL</td>
+				<td>Anne King</td>
+				<td>aking@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/deloitte.png"></td>
+				<td>Business Technology Analyst</td>
+				<td>Washington</td>
+				<td>DC</td>
+				<td>Kat Nelson</td>
+				<td>katnels@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/deloitte.png"></td>
+				<td>Business Technology Analyst</td>
+				<td>Chicago</td>
+				<td>IL</td>
+				<td>Betty Gray</td>
+				<td>begray@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/deutsche.png"></td>
+				<td>GTO Analyst</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Jaquie Diaz</td>
+				<td>jdiaz@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/deutsche.png"></td>
+				<td>Analyst</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Ron Watson</td>
+				<td>ronson@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/enova.png"></td>
+				<td>Senior Software Engineer II</td>
+				<td>Chicago</td>
+				<td>IL</td>
+				<td>Julian Phillips</td>
+				<td>Jphillips@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/epicsystems.png"></td>
+				<td>Software Engineer</td>
+				<td>Madison</td>
+				<td>WI</td>
+				<td>Jerry Green</td>
+				<td>jgreen@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/epicsystems.png"></td>
+				<td>Integration Engineer</td>
+				<td>Madison</td>
+				<td>WI</td>
+				<td>Craig Tweak</td>
+				<td>ctweak@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/espn.png"></td>
+				<td>Web Developer</td>
+				<td>Hartford</td>
+				<td>CT</td>
+				<td>Billy Carter</td>
+				<td>bcarter@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/facebook.png"></td>
+				<td>Software Engineer</td>
+				<td>Menlo Park</td>
+				<td>CA</td>
+				<td>Steve Markulla</td>
+				<td>smarkulla@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/freddiemac.png"></td>
+				<td>Business Systems Analyst</td>
+				<td>Washington</td>
+				<td>DC</td>
+				<td>George Geoffson</td>
+				<td>ggeofson@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/generalelectrics.png"></td>
+				<td>Software Development Leadership Program</td>
+				<td>San Ramon</td>
+				<td>CA</td>
+				<td>Larry Barnes</td>
+				<td>lbarnes@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/gianteagle.png"></td>
+				<td>Business Analyst</td>
+				<td>Pittsburgh</td>
+				<td>PA</td>
+				<td>Brian Murdock</td>
+				<td>bmurdock@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/godaddy.png"></td>
+				<td>Software Engineer</td>
+				<td>San Francisco</td>
+				<td>CA</td>
+				<td>Sara Coleman</td>
+				<td>scoleman@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/goldmansachs.png"></td>
+				<td>Software Engineer in Technology</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Maddy Blum</td>
+				<td>mblum@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/harrys.png"></td>
+				<td>Untitled Position</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Emily Henderson</td>
+				<td>emilyh@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/hopskotch.png"></td>
+				<td>Co-Founder</td>
+				<td></td>
+				<td>CA</td>
+				<td>Shirely Church</td>
+				<td>schurch@alumni.cmu.edu</td>
+			</tr>
+
+			<tr>
+				<td><img src="images/companies/jpmorgan.png"></td>
+				<td>Business Systems Analyst</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Ruth Rickman</td>
+				<td>rrickman@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/jobcase.png"></td>
+				<td>Software Engineer</td>
+				<td>Cambridge</td>
+				<td>MA</td>
+				<td>Laurie Hugh</td>
+				<td>lhugh@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/johnson.png"></td>
+				<td>IT Leadership Development Program Analyst</td>
+				<td>New Bruswick</td>
+				<td>NJ</td>
+				<td>Andrew Peterson</td>
+				<td>apeterson@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/liferay.png"></td>
+				<td>Junior Consultant</td>
+				<td>Chicago</td>
+				<td>IL</td>
+				<td>Michelle Barera</td>
+				<td>mbarera@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/linkedin.png"></td>
+				<td>Associate Web Developer/UI Engineer</td>
+				<td>San Francisco</td>
+				<td>CA</td>
+				<td>Ruby Phillips</td>
+				<td>rphillips@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/matrixgroup.png"></td>
+				<td>Web Developer</td>
+				<td>Arlington</td>
+				<td>VA</td>
+				<td>Donna Harris</td>
+				<td>dharris@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/mckinsey.png"></td>
+				<td>Digital Analyst</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Dennis Wright</td>
+				<td>dwright@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/moment.png"></td>
+				<td>Designer</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Jean-Claude Renaut</td>
+				<td>jcr@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/pwc.png"></td>
+				<td>Advisory Associate</td>
+				<td>Los Altos</td>
+				<td>CA</td>
+				<td>Charles Sanders</td>
+				<td>chucks@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/pwc.png"></td>
+				<td>Consultant (Advisory - Cybersecurity)</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Fred Carter</td>
+				<td>fcarter@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/salesforce.png"></td>
+				<td>Software Engineer</td>
+				<td>San Francisco</td>
+				<td>CA</td>
+				<td>Carly Whitman</td>
+				<td>cwhitman@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/salesforce.png"></td>
+				<td>Associate Member of Technical Staff</td>
+				<td>San Francisco</td>
+				<td>CA</td>
+				<td>Clarence Stone</td>
+				<td>cstone@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/sapientnitro.png"></td>
+				<td>Project Manager</td>
+				<td>New York</td>
+				<td>NY</td>
+				<td>Teresa Luthers</td>
+				<td>tluthers@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/workwave.png"></td>
+				<td>Software Engineer</td>
+				<td>Neptune</td>
+				<td>NJ</td>
+				<td>Diana Queen</td>
+				<td>dqueen@alumni.cmu.edu</td>
+			</tr>
+			<tr>
+				<td><img src="images/companies/worldwide.png"></td>
+				<td>Engineer</td>
+				<td>Honolulu</td>
+				<td>HI</td>
+				<td>Will Waters</td>
+				<td>wwaters@alumni.cmu.edu</td>
+			</tr>
+		</table>
+	</div>
+	</section>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- Bootstrap Js CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- Custom Scroller Js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<!-- Bootstrap Js CDN -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- jQuery Custom Scroller CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.src.js"></script>
+
+<script type="text/javascript">
+function sortState() {
+	var table, rows, switching, i, x, y, shouldSwitch;
+	table = document.getElementById('directory-table');
+	switching = true;
+	/* Make a loop that will continue until
+	no switching has been done: */
+	while (switching) {
+		// Start by saying: no switching is done:
+		switching = false;
+		rows = table.getElementsByTagName('tr');
+		/* Loop through all table rows (except the
+		first, which contains table headers): */
+		for (i = 1; i < (rows.length - 1); i++) {
+			// Start by saying there should be no switching:
+			shouldSwitch = false;
+			/* Get the two elements you want to compare,
+			one from current row and one from the next: */
+			x = rows[i].getElementsByTagName('td')[3];
+			y = rows[i + 1].getElementsByTagName('td')[3];
+			// Check if the two rows should switch place:
+			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+				console.log(x.innerHTML.toLowerCase());
+				console.log(y.innerHTML.toLowerCase());
+				// I so, mark as a switch and break the loop:
+				shouldSwitch= true;
+				break;
+			}
+		}
+		if (shouldSwitch) {
+			/* If a switch has been marked, make the switch
+			and mark that a switch has been done: */
+			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+			switching = true;
+		}
+	}
+}
+
+function sortCity() {
+	var table, rows, switching, i, x, y, shouldSwitch;
+	table = document.getElementById('directory-table');
+	switching = true;
+	/* Make a loop that will continue until
+	no switching has been done: */
+	while (switching) {
+		// Start by saying: no switching is done:
+		switching = false;
+		rows = table.getElementsByTagName('tr');
+		/* Loop through all table rows (except the
+		first, which contains table headers): */
+		for (i = 1; i < (rows.length - 1); i++) {
+			// Start by saying there should be no switching:
+			shouldSwitch = false;
+			/* Get the two elements you want to compare,
+			one from current row and one from the next: */
+			x = rows[i].getElementsByTagName('td')[2];
+			y = rows[i + 1].getElementsByTagName('td')[2];
+			// Check if the two rows should switch place:
+			if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+				console.log(x.innerHTML.toLowerCase());
+				console.log(y.innerHTML.toLowerCase());
+				// I so, mark as a switch and break the loop:
+				shouldSwitch= true;
+				break;
+			}
+		}
+		if (shouldSwitch) {
+			/* If a switch has been marked, make the switch
+			and mark that a switch has been done: */
+			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+			switching = true;
+		}
+	}
+}
+
+var buttonSort1 = document.getElementById('stateSorter');
+buttonSort1.addEventListener('click', sortState);
+
+var buttonSort2 = document.getElementById('citySorter');
+buttonSort2.addEventListener('click', sortCity);
+
+
+// angela's edition
+function searchJob() {
+	var input, filter, table, tr, td, i;
+	input = document.getElementById("titleInput");
+	filter = input.value.toUpperCase();
+	console.log(filter)
+	table = document.getElementById("directory-table");
+	tr = table.getElementsByTagName("tr");
+	console.log(tr)
+	for (i = 0; i < tr.length; i++) {
+		td = tr[i].getElementsByTagName("td")[1];
+		if (td) {
+			if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+				tr[i].style.display = "";
+			} else {
+				tr[i].style.display = "none";
+			}
+		}
+	}
+}
+</script>
+
+</body>
+</html>
