@@ -573,16 +573,16 @@ Highcharts.chart('cloud-container', {
         }
     },
     series: [{
-        name: 'Average',
-        data: [67000, 71500, 106400, 67000, 82000,]
+        name: 'Lowest',
+        data: [50000, 56000, 62000, 56000, 60000,]
 
     }, {
         name: 'Median',
         data: [83600, 78800, 82500, 56000, 75000, ]
 
     }, {
-        name: 'Lowest',
-        data: [50000, 56000, 49000, 56000, 60000,]
+        name: 'Average',
+        data: [67000, 71500, 80000, 67000, 82000,]
 
     }, {
         name: 'Highest',
